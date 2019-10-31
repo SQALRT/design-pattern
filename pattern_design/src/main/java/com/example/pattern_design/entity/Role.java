@@ -1,13 +1,22 @@
 package com.example.pattern_design.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Transient;
+
 
 @Entity
 public abstract class Role{
-    Integer life_value;
-    Integer magic_value;
-    String description;
-    Attack attack;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+    private Integer life_value;
+    private Integer magic_value;
+    private String description;
+    @Transient
+    private Attack attack;
 
     public Integer getLife_value() {
         return life_value;
