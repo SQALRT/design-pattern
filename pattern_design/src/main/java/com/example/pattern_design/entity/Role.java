@@ -17,7 +17,7 @@ public abstract class Role{
     private String description;
     @Transient
     private Attack attack;
-
+    private String username;
     public Integer getLife_value() {
         return life_value;
     }
@@ -48,6 +48,14 @@ public abstract class Role{
 
     public void setAttack(Attack attack) {
         this.attack = attack;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
     
 }
