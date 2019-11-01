@@ -18,6 +18,7 @@ public class User{
     @OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "role_id")
     private Role role;
+    public User(){}
     public User(String username,Role role) {
         this.setUsername(username);
         this.setRole(role);
