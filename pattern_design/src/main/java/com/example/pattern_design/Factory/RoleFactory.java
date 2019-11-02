@@ -6,18 +6,27 @@ import com.example.pattern_design.entity.Nanja;
 import com.example.pattern_design.entity.Role;
 
 public class RoleFactory{
+    public RoleFactory(){
+
+    }
     public Role CreateRole(String charactername){
-        if(charactername =="swordwoman"){
+        System.out.println(charactername.getClass());
+        if(charactername.equals("swordwoman")){
             Heroine heroine = new Heroine();
             return heroine;
         }
-        else if (charactername == "ninja"){
+        if (charactername.equals("ninja")){
             Nanja nanja = new Nanja();
             return nanja;
         }
-        else{
+        if(charactername.equals("monk")){
             Monk monk = new Monk();
             return monk;
         }
+        else{
+            
+            return null;
+        }
+
     }
 }
